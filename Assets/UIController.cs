@@ -5,8 +5,16 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
     public Transform player;
     [SerializeField] private Text text;
+
     private string defaultText = "";
     private bool showText;
+
+    [SerializeField]
+    private Text winOrFail;
+    private string defaultTextWoF = "";
+
+    //[SerializeField] private Button restartButton;
+    [SerializeField] private Button exitButton;
 
     public float radius = 1.5f;
 
@@ -15,7 +23,7 @@ public class UIController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         showText = false;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,7 +36,6 @@ public class UIController : MonoBehaviour {
             Vector3 direction = hitCollider.transform.position - transform.position;
             if (Vector3.Dot(transform.forward, direction) > .5f && hitCollider.name == "Button")
             {
-                //Debug.Log("Showhint");
                 ShowHint();
                 findButton = true;
             }

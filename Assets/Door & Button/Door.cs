@@ -51,7 +51,6 @@ public class Door : MonoBehaviour
             FunctionOpen();
             close.Reset();
         }
-        //_open = !_open;
     }
 
     public void FunctionOpen()
